@@ -95,6 +95,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
      * @param totalSupplier    获取总条数函数
      * @param pageListFunction 获取当前页数据函数
      */
+    @SuppressWarnings("unused")
     public static <S extends List<?>> PageList<S> of(Supplier<Long> totalSupplier,
                                                      BiFunction<Long, Integer, S> pageListFunction) {
         return new PageList<>(totalSupplier, pageListFunction);
@@ -107,6 +108,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
      * @param pageListFunction 获取当前页数据函数
      * @param defaultPageSize  默认每页条数
      */
+    @SuppressWarnings("unused")
     public static <S extends List<?>> PageList<S> of(Supplier<Long> totalSupplier,
                                                      BiFunction<Long, Integer, S> pageListFunction,
                                                      Integer defaultPageSize) {

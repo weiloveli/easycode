@@ -10,7 +10,7 @@ import java.util.function.Supplier;
  * @author weiqiang8
  * @date 2021-03-12
  */
-public abstract class BasePageList<T extends List<?>> extends BasePagingDataAccess<T> {
+public abstract class BasePageList<T extends List<?>> extends BasePageListAccess<T> {
 
     /**
      * 构造器

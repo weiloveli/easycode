@@ -9,7 +9,7 @@ import java.util.function.Supplier;
  * @author weiqiang8
  * @date 2021-03-12
  */
-public abstract class BasePagingDataAccess<T> {
+public abstract class BasePageListAccess<T> {
 
     /**
      * 总条数函数
@@ -27,7 +27,7 @@ public abstract class BasePagingDataAccess<T> {
      * @param totalSupplier    总条数函数
      * @param pageListFunction 当前页数据函数
      */
-    public BasePagingDataAccess(Supplier<Long> totalSupplier, BiFunction<Long, Integer, T> pageListFunction) {
+    public BasePageListAccess(Supplier<Long> totalSupplier, BiFunction<Long, Integer, T> pageListFunction) {
         this.totalSupplier = totalSupplier;
         this.pageListFunction = pageListFunction;
     }

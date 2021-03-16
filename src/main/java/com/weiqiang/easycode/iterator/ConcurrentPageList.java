@@ -8,6 +8,8 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
+ * 支持并发执行的分页列表
+ *
  * @author weiqiang8
  * @date 2021-03-15
  */
