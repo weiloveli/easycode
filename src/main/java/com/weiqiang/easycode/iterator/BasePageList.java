@@ -18,7 +18,7 @@ public abstract class BasePageList<T extends List<?>> extends BasePageListAccess
      * @param totalSupplier    获取总条数函数
      * @param pageListFunction 分页数据流程
      */
-    public BasePageList(Supplier<Long> totalSupplier, BiFunction<Long, Integer, T> pageListFunction) {
+    public BasePageList(Supplier<Long> totalSupplier, BiFunction<Integer, Integer, T> pageListFunction) {
         super(totalSupplier, pageListFunction);
     }
 

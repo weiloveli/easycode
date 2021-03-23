@@ -28,7 +28,7 @@ public class ConcurrentPageList<T extends List<?>> extends PageList<T> {
      * @param executor         线程池
      */
     public ConcurrentPageList(Supplier<Long> totalSupplier,
-                              BiFunction<Long, Integer, T> pageListFunction,
+                              BiFunction<Integer, Integer, T> pageListFunction,
                               Executor executor) {
         super(totalSupplier, pageListFunction);
         this.executor = executor;
@@ -43,7 +43,7 @@ public class ConcurrentPageList<T extends List<?>> extends PageList<T> {
      * @param executor         线程池
      */
     public ConcurrentPageList(Supplier<Long> totalSupplier,
-                              BiFunction<Long, Integer, T> pageListFunction,
+                              BiFunction<Integer, Integer, T> pageListFunction,
                               Integer defaultPageSize,
                               Executor executor) {
         super(totalSupplier, pageListFunction, defaultPageSize);
@@ -60,7 +60,7 @@ public class ConcurrentPageList<T extends List<?>> extends PageList<T> {
      * @return 并发分页实例
      */
     public static <S extends List<?>> ConcurrentPageList<S> of(Supplier<Long> totalSupplier,
-                                                               BiFunction<Long, Integer, S> pageListFunction,
+                                                               BiFunction<Integer, Integer, S> pageListFunction,
                                                                Integer defaultPageSize,
                                                                Executor executor) {
         return new ConcurrentPageList<>(totalSupplier, pageListFunction, defaultPageSize, executor);
@@ -76,7 +76,7 @@ public class ConcurrentPageList<T extends List<?>> extends PageList<T> {
      */
     @SuppressWarnings("unused")
     public static <S extends List<?>> ConcurrentPageList<S> of(Supplier<Long> totalSupplier,
-                                                               BiFunction<Long, Integer, S> pageListFunction,
+                                                               BiFunction<Integer, Integer, S> pageListFunction,
                                                                Executor executor) {
         return new ConcurrentPageList<>(totalSupplier, pageListFunction, executor);
     }

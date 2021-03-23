@@ -19,7 +19,7 @@ public abstract class BasePageListAccess<T> {
     /**
      * 当前页数据函数
      */
-    private final BiFunction<Long, Integer, T> pageListFunction;
+    private final BiFunction<Integer, Integer, T> pageListFunction;
 
     /**
      * 有参构造
@@ -27,7 +27,7 @@ public abstract class BasePageListAccess<T> {
      * @param totalSupplier    总条数函数
      * @param pageListFunction 当前页数据函数
      */
-    public BasePageListAccess(Supplier<Long> totalSupplier, BiFunction<Long, Integer, T> pageListFunction) {
+    public BasePageListAccess(Supplier<Long> totalSupplier, BiFunction<Integer, Integer, T> pageListFunction) {
         this.totalSupplier = totalSupplier;
         this.pageListFunction = pageListFunction;
     }
@@ -46,7 +46,7 @@ public abstract class BasePageListAccess<T> {
      *
      * @return 分页数据函数
      */
-    public BiFunction<Long, Integer, T> getPageListFunction() {
+    public BiFunction<Integer, Integer, T> getPageListFunction() {
         return pageListFunction;
     }
 

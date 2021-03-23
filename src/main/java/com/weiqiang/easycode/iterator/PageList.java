@@ -33,7 +33,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
     /**
      * 当前页数
      */
-    protected Long currentPageNumber = 0L;
+    protected Integer currentPageNumber = 0;
 
     /**
      * 默认一组数据的条数
@@ -47,7 +47,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
      * @param pageListFunction 获取当前页数据函数
      */
     public PageList(Supplier<Long> totalSupplier,
-                    BiFunction<Long, Integer, T> pageListFunction) {
+                    BiFunction<Integer, Integer, T> pageListFunction) {
         super(totalSupplier, pageListFunction);
         initialize();
     }
@@ -60,7 +60,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
      * @param defaultPageSize  默认每页条数
      */
     public PageList(Supplier<Long> totalSupplier,
-                    BiFunction<Long, Integer, T> pageListFunction,
+                    BiFunction<Integer, Integer, T> pageListFunction,
                     Integer defaultPageSize) {
         super(totalSupplier, pageListFunction);
         this.defaultPageSize = defaultPageSize;
@@ -97,7 +97,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
      */
     @SuppressWarnings("unused")
     public static <S extends List<?>> PageList<S> of(Supplier<Long> totalSupplier,
-                                                     BiFunction<Long, Integer, S> pageListFunction) {
+                                                     BiFunction<Integer, Integer, S> pageListFunction) {
         return new PageList<>(totalSupplier, pageListFunction);
     }
 
@@ -110,7 +110,7 @@ public class PageList<T extends List<?>> extends BasePageList<T> implements Iter
      */
     @SuppressWarnings("unused")
     public static <S extends List<?>> PageList<S> of(Supplier<Long> totalSupplier,
-                                                     BiFunction<Long, Integer, S> pageListFunction,
+                                                     BiFunction<Integer, Integer, S> pageListFunction,
                                                      Integer defaultPageSize) {
         return new PageList<>(totalSupplier, pageListFunction, defaultPageSize);
     }
